@@ -12,7 +12,7 @@ function Vote({ event }) {
   try {
     const token = localStorage.getItem("token");
 
-     const res = await axios.post(
+     await axios.post(
         `${process.env.REACT_APP_API_URL}/api/response/submit`,
         {
           eventId: event._id,
