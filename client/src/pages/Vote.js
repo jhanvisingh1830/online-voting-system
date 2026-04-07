@@ -12,12 +12,13 @@ function Vote({ event }) {
   try {
     const token = localStorage.getItem("token");
 
-    const res = await axios.post(
-      "http://127.0.0.1:5000/api/response/submit",
-      {
-        eventId: event._id,
-        selectedOption: option
-      },
+     const res = await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/response/submit`,
+        {
+          eventId: event._id,
+          selectedOption: option
+        }
+      ,
       {
         headers: {
           Authorization: token

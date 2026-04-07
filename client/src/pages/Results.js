@@ -13,11 +13,8 @@ function Results({ eventId }) {
       console.log("Results Token:", token); // 👈 HERE
 
       // ✅ STEP 2: API CALL
-      const res = await axios.get(
-        `http://127.0.0.1:5000/api/response/results/${eventId}`,
-        
-  
-      );
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/response/results/${eventId}`)
+    ;
 
       // ✅ STEP 3: DEBUG RESPONSE
       console.log("RESULT API:", res.data); // 👈 HERE

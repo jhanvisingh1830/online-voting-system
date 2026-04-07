@@ -18,10 +18,7 @@ const [search, setSearch] = useState("");
 
         console.log("Dashboard Token:", token);
 
-        const res = await axios.get(
-          "http://127.0.0.1:5000/api/events",
-          
-        );
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/events`);
 
         setEvents(res.data);
       } catch (err) {
